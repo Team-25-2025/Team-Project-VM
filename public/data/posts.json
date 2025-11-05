@@ -1,0 +1,1 @@
+[{"id":1,"topicId":"1","postTitle":"Test1","author":"Kyle","message":"This post is a test to see if posts are correctly stored in their JSON file.","date":"11-10-2025 18:21"},{"id":2,"topicId":"1","postTitle":"Test 2","author":"Kyle Briars","message":"Should display above Test the first test since this one is more recent.","date":"18-10-2025 17:34"}]

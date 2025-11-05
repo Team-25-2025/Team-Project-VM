@@ -1,0 +1,135 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f5f5;
+    overflow-x: hidden;
+}
+
+.main-content {
+    transition: margin-left 0.3s ease;
+}
+
+.task-card {
+    background: white;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    padding: 16px;
+    margin-bottom: 12px;
+    transition: box-shadow 0.2s;
+}
+
+.task-card:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.priority-badge {
+    font-size: 0.75rem;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-weight: 500;
+}
+
+.priority-critical {
+    background-color: #fee;
+    color: #c00;
+    border: 1px solid #fcc;
+}
+
+.priority-high {
+    background-color: #fff3e0;
+    color: #e65100;
+    border: 1px solid #ffe0b2;
+}
+
+.priority-medium {
+    background-color: #fff9c4;
+    color: #f57f17;
+    border: 1px solid #fff59d;
+}
+
+.priority-low {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid #c8e6c9;
+}
+
+.kanban-column {
+    background-color: #fafafa;
+    border-radius: 8px;
+    padding: 16px;
+    min-height: 400px;
+}
+
+.kanban-header {
+    font-weight: 600;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 3px solid;
+}
+
+.kanban-todo { border-color: #2196f3; }
+.kanban-progress { border-color: #ff9800; }
+.kanban-done { border-color: #4caf50; }
+
+.add-task-btn {
+    width: 100%;
+    padding: 12px;
+    border: 2px dashed #ccc;
+    background: transparent;
+    border-radius: 8px;
+    color: #999;
+    transition: all 0.2s;
+}
+
+.add-task-btn:hover {
+    border-color: #999;
+    color: #666;
+}
+
+.view-switcher {
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    padding: 4px;
+}
+
+.view-btn {
+    border: none;
+    background: transparent;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: all 0.2s;
+    color: #666;
+}
+
+.view-btn.active {
+    background: white;
+    color: #2196f3;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.status-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 8px;
+}
+
+.status-todo { background-color: #2196f3; }
+.status-progress { background-color: #ff9800; }
+.status-done { background-color: #4caf50; }
+
+.list-group-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.count-badge {
+    background-color: #e0e0e0;
+    color: #666;
+    border-radius: 12px;
+    padding: 2px 8px;
+    font-size: 0.75rem;
+    margin-left: 8px;
+}

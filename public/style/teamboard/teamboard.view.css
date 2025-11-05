@@ -1,0 +1,465 @@
+h1 {
+    margin: 0 0 8px 0;
+}
+
+p {
+    margin: 0 0 16px 0;
+    color: #555;
+}
+
+.board {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #e0e0e0;
+    padding: 20px;
+    border-radius: 8px;
+    position: relative;
+}
+
+/*-------------------- Add Task Button Styles------------------------- */
+.add-project-button,
+.add-task-button {
+    background: #0d6efd;
+    color: #fff;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    transition: background-color 150ms ease, transform 120ms ease, box-shadow 150ms ease;
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+.add-project-button:hover,
+.add-project-button:focus,
+.add-task-button:hover,
+.add-task-button:focus {
+    background-color: #0b5ed7;
+}
+
+.add-project-button:active,
+.add-task-button:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+/* ------------------------------------------------------------------ */
+
+
+/* Parent of summary */
+details {
+    border: 1px solid #e0e0e0;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    background: #fff;
+}
+
+/* Clickable header */
+summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    list-style: none;
+    outline: none;
+}
+
+/* Task title */
+.task-title {
+    font-weight: 600;
+}
+
+.info {
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+    font-size: 0.95rem;
+    color: #333;
+}
+
+/* Info pill styles */
+.badge {
+    padding: 4px 8px;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 0.85rem;
+    white-space: nowrap;
+}
+
+.info-pill {
+    background: #f3f4f6;
+    padding: 4px 8px;
+    border-radius: 8px;
+    color: #333;
+    font-size: 0.9rem;
+}
+
+.status-todo {
+    background: #6c757d;
+}
+
+.status-done {
+    background: #198754;
+}
+
+/* Review status styling (marked for review) */
+.status-review {
+    background: #ffc107;
+    color: #212529;
+}
+
+/* --------Risk level color coding-------- */
+.info-pill.risk-low {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.info-pill.risk-medium {
+    background: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeaa7;
+}
+
+.info-pill.risk-high {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+/* --------------------------------*/
+
+.details-body {
+    margin-top: 10px;
+    color: #333;
+    font-size: 0.95rem;
+}
+
+.details-body p {
+    /* text wrap instead of overflowing */
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    white-space: pre-wrap;
+    /* preserve user newlines while still wrapping */
+}
+
+.updates {
+    margin-top: 8px;
+    border-top: 1px dashed #eee;
+    padding-top: 8px;
+    color: #444;
+}
+
+small {
+    color: #666;
+}
+
+/* Action buttons shown under the details body, right-aligned */
+.details-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.edit-task-button,
+.mark-done-button {
+    cursor: pointer;
+}
+
+/* Mark for review button styling */
+.mark-review-button {
+    cursor: pointer;
+    background: #ffc107;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    padding: 6px 10px;
+    border-radius: 6px;
+    color: #212529;
+}
+
+.mark-review-button:hover {
+    background: #ffca2c;
+}
+
+.mark-done-button {
+    background-color: rgb(25, 135, 84);
+    color: #fff;
+    cursor: pointer;
+    border: 1px solid black;
+}
+
+.mark-done-button:hover {
+    background: rgb(15, 103, 61);
+}
+
+/* manager-only action to mark as incomplete */
+.mark-incomplete-button {
+    background-color: rgb(248, 171, 64);
+    color: #fff;
+    cursor: pointer;
+    border: 1px solid black;
+}
+
+.mark-incomplete-button:hover {
+    background: rgb(247, 116, 69);
+}
+
+/* Popup styles */
+.popup-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 60;
+    padding: 20px;
+}
+
+.popup-overlay.open {
+    display: flex;
+}
+
+.popup {
+    background: #fff;
+    border-radius: 8px;
+    max-width: 540px;
+    width: 100%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    padding: 18px;
+}
+
+.popup h3 {
+    margin-top: 0;
+}
+
+.popup label {
+    display: block;
+    margin: 10px 0;
+    font-size: 0.95rem;
+    color: #333;
+}
+
+.popup input[type="text"],
+.popup input[type="date"],
+.popup textarea {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 6px;
+    border: 1px solid #d0d7de;
+    box-sizing: border-box;
+    margin-top: 6px;
+}
+
+.popup-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 12px;
+}
+
+/* Save, delete, and cancel buttons */
+.popup-actions button {
+    font-size: 1rem;
+    line-height: 1.25;
+    padding: 8px 12px;
+    border-radius: 6px;
+}
+
+.popup-actions .add-task-button {
+    margin: 0;
+}
+
+.popup-actions #cancelAddTask,
+.popup-actions #cancelAddProject,
+.popup-actions .add-project-button,
+.popup-actions .add-task-button,
+.popup-actions .delete-task-button,
+.popup-actions .delete-project-button {
+    background: #0d6efd;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #fff;
+}
+
+#EmptyMsg {
+    color: #6c757d
+}
+
+/* Personal board styling */
+.personal-board {
+    margin-top: 18px;
+    padding-top: 12px;
+}
+
+.personal-board-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.personal-board-header h2 {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.add-personal-task-button {
+    background: #0d6efd;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.add-personal-task-button:hover {
+    background: #0b5ed7;
+}
+
+.personal-list {
+    margin-top: 10px;
+}
+
+.personal-list details {
+    margin-bottom: 8px;
+}
+
+/* Manager Dashboard Styles */
+.manager-controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+/* ----------Team List---------- */
+.team-list-button {
+    position: absolute;
+    right: 16px;
+    top: 12px;
+    z-index: 1;
+    padding: 4px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.team-list-button:hover { background: #9a9a9a4f; }
+
+#projectMembersContainer {
+    position: absolute;
+    right: 16px;
+    top: 48px;
+    min-width: 180px;
+    max-width: 260px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    padding: 10px;
+    display: none;
+    z-index: 85;
+}
+
+#projectMembersContainer.open { display: block; }
+#projectMembersContainer .project-members-header { margin-bottom: 8px; }
+#projectMembersContainer .project-members-list { margin: 0; padding-left: 16px; max-height: 240px; overflow: auto; }
+#projectMembersContainer .project-members-list li { color: #333; padding: 4px 0; }
+#projectMembersContainer .project-members-list li.no-members { color: #6c757d; font-style: italic; }
+
+/* ---------------------------------------------------------- */
+
+.projects-section, .teams-section {
+    margin-bottom: 40px;
+}
+
+.projects-section h2, .teams-section h2 {
+    color: #333;
+    border-bottom: 2px solid #0d6efd;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+.project-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.project-header h3 {
+    margin: 0;
+    color: #333;
+}
+
+
+
+.member-count {
+    background: #6c757d;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
+
+.project-details p {
+    margin-bottom: 15px;
+    color: #666;
+}
+
+.project-meta {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+.project-meta div {
+    margin-bottom: 8px;
+}
+
+.project-meta div:last-child {
+    margin-bottom: 0;
+}
+
+.project-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.view-team-button, .edit-project-button {
+    background: #6c757d;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.view-team-button:hover {
+    background: #5a6268;
+}
+
+.edit-project-button:hover {
+    background: #5a6268;
+}
+

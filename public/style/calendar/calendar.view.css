@@ -1,0 +1,147 @@
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+  color: black;
+  overflow-x: hidden;
+}
+
+.main-content {
+  transition: margin-left 0.3s ease;
+  padding: 20px;
+}
+
+h1{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;  
+    justify-content: center;
+    color: black;
+    text-decoration-line: underline;
+    text-decoration-color: black;
+}
+.calendarHeader{
+    display: flex;
+    justify-content: center;
+    gap: 33%;
+}
+button{
+    background-color: gray;
+    color: white;
+    border-radius: 5px;
+    max-height: 50px;
+    cursor: pointer;
+}
+.newEventForm{
+    background-color: gray;
+    color: white;
+    margin:auto;
+    width: 90%;
+    border: 2px;
+    border-color: black;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 5px;
+}
+input[type="text"]{
+    width:80%;
+}
+input[type="url"]{
+    width:80%;
+}
+input[type="submit"]{
+    align-self: center;
+    cursor: pointer;
+}
+input:focus{
+    border: 3px solid black;
+}
+.weekdays {
+    display: flex;
+    justify-content: space-around; 
+    text-align: center;
+    width: 100%; 
+    margin: 10px auto;
+    font-weight: bold;
+}
+.calendarContent {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.day {
+    border: 1px solid black;
+    background: white;
+    min-height: 120px;
+    border-radius: 6px;
+    padding: 5px;
+    cursor: pointer;
+    position: relative;
+}
+.eventList{
+    display: flex;
+}
+.addEvent{
+    color: black;
+    background-color: white;
+}
+.event{
+    background-color: black;
+    color:white;
+    border-radius: 5px;
+}
+.eventListHeading{
+    display: flex;
+}
+
+.eventList{
+    display: flex;
+    padding: 5px;
+    flex-direction: column;
+}
+.eventListItem{
+    background-color: black;
+    border: 5px;
+    border-radius: 10px;
+    padding: 16px;
+    margin: 5px;
+}
+#eventListContent{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-items: flex-start;
+}
+.event {
+    position: relative;
+    cursor: pointer;
+}
+
+.tooltip {
+    position: absolute;
+    top: 100%; /* below the event */
+    left: 0;
+    background-color: rgba(0,0,0,0.8);
+    color: #fff;
+    padding: 5px;
+    border-radius: 4px;
+    opacity: 0;
+    transition: opacity 0.2s;
+    pointer-events: none; 
+    z-index: 10;
+    white-space: nowrap;
+}
+
+.event:hover .tooltip {
+    opacity: 1;
+}
+@media (min-width:700px){
+    .newEventForm {width: 40%;}
+}
+.d-flex {
+    display: flex;
+}
