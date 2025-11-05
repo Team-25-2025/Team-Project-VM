@@ -188,7 +188,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["newComment"])){
                 </div>
             </footer>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
-        <?php requireModule(['nav']) ?>
+
         <script>
             function toggleComments(button, id) {
                 const section = document.getElementById("hideComments" + id);

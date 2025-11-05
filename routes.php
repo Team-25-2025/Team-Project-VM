@@ -7,9 +7,9 @@ $router->get('/TeamProjectManage/public/', 'App\\Controllers\\SessionController@
 $router->post('/TeamProjectManage/public/', 'App\\Controllers\\SessionController@store')->only('guest');
 $router->delete('/TeamProjectManage/public/', 'App\\Controllers\\SessionController@destroy')->only('auth');
 
-$router->get('/TeamProjectManage/public/index.php/board', 'App\\Controllers\\TeamBoardController@index');
+$router->get('/TeamProjectManage/public/index.php/board', 'App\\Controllers\\TeamBoardController@index')->only('auth');
 
-$router->get('/TeamProjectManage/public/index.php/todo', 'App\\Controllers\\TodoController@index');
+$router->get('/TeamProjectManage/public/index.php/todo', 'App\\Controllers\\TodoController@index')->only('auth')->perms(['employee']);
 
 $router->get('/TeamProjectManage/public/index.php/knowledge', 'App\\Controllers\\KnowledgeSharingController@index')->only('auth');
 

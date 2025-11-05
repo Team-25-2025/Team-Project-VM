@@ -23,7 +23,7 @@
 <button class="sidebar-toggle-inline" id="sidebarToggleInline">
     <i class="fas fa-bars"></i>
 </button>
-<img src="/images/logo.png" alt="my tasks logo" width="40" class="me-2">
+<img src="\..\TeamProjectManage/public/images/logo.png" alt="my tasks logo" width="40" class="me-2">
 </div>
 </div>
 </nav>
