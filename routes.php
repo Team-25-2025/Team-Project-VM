@@ -12,13 +12,20 @@ $router->get('/TeamProjectManage/public/index.php/board', 'App\\Controllers\\Tea
 $router->get('/TeamProjectManage/public/index.php/todo', 'App\\Controllers\\TodoController@index');
 
 $router->get('/TeamProjectManage/public/index.php/knowledge', 'App\\Controllers\\KnowledgeSharingController@index')->only('auth');
+
 $router->get('/TeamProjectManage/public/index.php/knowledge/viewtopic', 'App\\Controllers\\KnowledgeSharingController@viewTopic')->only('auth');
+$router->post('/TeamProjectManage/public/index.php/knowledge/viewtopic', 'App\\Controllers\\KnowledgeSharingController@viewTopic')->only('auth');
+
 $router->get('/TeamProjectManage/public/index.php/knowledge/create/topic', 'App\\Controllers\\KnowledgeSharingController@createTopic')->only('auth');
+$router->post('/TeamProjectManage/public/index.php/knowledge/create/topic', 'App\\Controllers\\KnowledgeSharingController@createTopic')->only('auth');
 
 $router->get('/TeamProjectManage/public/index.php/knowledge/categories', 'App\\Controllers\\KnowledgeSharingController@categories')->only('auth');
 $router->get('/TeamProjectManage/public/index.php/knowledge/create/categories', 'App\\Controllers\\KnowledgeSharingController@createCategories')->only('auth');
+$router->post('/TeamProjectManage/public/index.php/knowledge/create/categories', 'App\\Controllers\\KnowledgeSharingController@createCategories')->only('auth');
 
 $router->get('/TeamProjectManage/public/index.php/knowledge/create/post', 'App\\Controllers\\KnowledgeSharingController@createPost')->only('auth');
+$router->post('/TeamProjectManage/public/index.php/knowledge/create/post', 'App\\Controllers\\KnowledgeSharingController@createPost')->only('auth');
+
 
 $router->get('/TeamProjectManage/public/index.php/calendar', 'App\\Controllers\\CalendarController@index')->only('auth');
 $router->post('/TeamProjectManage/public/index.php/calendar/SaveEvents', 'App\\Controllers\\CalendarController@saveEvents')->only('auth');

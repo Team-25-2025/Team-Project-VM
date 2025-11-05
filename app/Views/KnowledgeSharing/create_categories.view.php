@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
         }
         $categories[] = ['id' => $nextID, 'title' => $title];
         file_put_contents($path, json_encode($categories));
-        header('Location: categories.php'); 
+        header('Location: /TeamProjectManage/public/index.php/knowledge/categories'); 
         exit;
     }
 }
@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
             <div class = "card-body">
             <h1>Create a Category</h1>
             <div>
-            <form method="post">
+            <form method="post" action="/TeamProjectManage/public/index.php/knowledge/create/categories">
                 <label>Category Name:<br>
                 <textarea name ="title" rows ="2" cols ="60" required></textarea>
                 </label><br><br>
@@ -79,5 +79,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
                 </div>
             </footer>
         </body>
-        <?php requireModule(['nav']) ?>
 </html>

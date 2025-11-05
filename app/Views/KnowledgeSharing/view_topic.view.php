@@ -33,7 +33,7 @@ usort($topicPosts, function($a,$b){
     return $b['id'] <=> $a['id'];
 });
 
-$commentsPath = 'data/comments.json';
+$commentsPath = __DIR__ . '/../../../public/data/comments.json';
 if (!file_exists($commentsPath)){
     file_put_contents($commentsPath, '[]');
 }

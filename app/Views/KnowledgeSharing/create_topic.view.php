@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
         }
         $topics[] = ['id' => $nextID, 'title' => $title, 'content' => $content, 'category' => $category];
         file_put_contents($path, json_encode($topics));
-        header('Location: /knowledge/categories'); 
+        header('Location: /TeamProjectManage/public/index.php/knowledge/categories'); 
         exit;
     }
 }

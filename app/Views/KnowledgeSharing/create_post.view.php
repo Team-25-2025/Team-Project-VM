@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['newPost'])) {
         $newPost = ['id' => $newId, 'topicId' => $topicId, 'postTitle' => $postTitle, 'author' => $author, 'message' => $message, 'date' => date('d-m-Y H:i')];
         $posts[] = $newPost;
         file_put_contents($path2, json_encode($posts));
-        header("Location: /knowledge/viewtopic?id=".$topicId);
+        header("Location: /TeamProjectManage/public/index.php/knowledge/viewtopic?id=".$topicId);
         exit;
     }
 }
@@ -83,5 +83,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['newPost'])) {
                 </div>
             </footer>
         </body>
-        <?php requireModule(['nav']) ?>
 </html>
