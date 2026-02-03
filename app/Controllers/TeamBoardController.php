@@ -2,15 +2,13 @@
 namespace App\Controllers;
 
 class TeamBoardController {
-  public function index()
-  {
-    if (!isset($_GET['teamId'])) {
-      die("No team selected.");
-    }
-    $teamId = $_GET['teamId'];
-    // Pass $teamId to the view
-    view('projectsAndTeamBoard/teamboard.php', ['teamId' => $teamId]);
+  public function index() {
+    if ($_SESSION['user']['permission'] == 'manager') {
+      view('TeamBoard/team_board_hub_manager.view.php');  
+    } elseif ($_SESSION['user']['permission'] == 'teamleader') {
+      view('TeamBoard/team_board_teamleader.view.php');
+    } elseif ($_SESSION['user']['permission'] == 'employee') {
+      view('TeamBoard/team_board_employee.view.php');
+    } 
   }
-
 }
-?>
